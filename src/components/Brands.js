@@ -39,7 +39,9 @@ function Brands() {
     <div className="grid grid-cols-5 lg:grid-cols-8 gap-y-5 gap-x-5 items-center">
       {categoryElements}
       <div className="text-center">
-        <button className=" hover:text-red-400 text-red-500">View All</button>
+        <button className="hover:text-red-400 text-red-500 text-xs sm:text-sm">
+          View All
+        </button>
       </div>
     </div>
   )

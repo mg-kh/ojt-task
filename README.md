@@ -11,8 +11,8 @@ git clone https://github.com/mg-kh/ojt-task
 
 npm install
 
-npm run
+npm run start
 ```
 
 ---
-*Have a good day mate!*
+*Have a good day mate!* :wave:

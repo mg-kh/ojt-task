@@ -9,6 +9,7 @@ import {
   Laptops,
   Tablets,
   BuyOneGetOne,
+  Footer,
 } from '../components'
 
 function Home() {
@@ -65,6 +66,13 @@ function Home() {
             </button>
           </div>
           <NewArrivals />
+        </div>
+      </section>
+      {/* View By Brands */}
+      <section className="container">
+        <div className="py-3 space-y-4">
+          <h3 className="uppercase font-semibold text-xl">View By Brands</h3>
+          <Categories />
         </div>
       </section>
       <hr className="bg-gray-100 my-3 h-2 border-none" />
@@ -129,6 +137,10 @@ function Home() {
           </div>
           <Tablets />
         </div>
+      </section>
+      {/* Footer */}
+      <section className="bg-red-600">
+        <Footer />
       </section>
     </div>
   )

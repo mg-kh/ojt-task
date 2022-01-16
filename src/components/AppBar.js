@@ -34,6 +34,21 @@ function AppBar() {
           </div>
           {/* Right */}
           <div className="space-x-2 items-center flex">
+            <select
+              name=""
+              className={`text-white ${
+                sideBarOpen
+                  ? 'bg-slate-500 py-1 px-2 rounded-md'
+                  : 'bg-transparent'
+              }`}
+            >
+              <option value="" className="text-black">
+                🇲🇲&emsp;Ks
+              </option>
+              <option value="" className="text-black">
+                🇺🇸&emsp;USD
+              </option>
+            </select>
             {/* Toggle Sidebar */}
             <button
               onClick={() => setSideBarOpen(!sideBarOpen)}

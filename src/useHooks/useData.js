@@ -114,6 +114,10 @@ const useData = (isPromo) => {
             spaceBetween: 40,
           },
           '1024': {
+            slidesPerView: 5,
+            spaceBetween: 50,
+          },
+          '1200': {
             slidesPerView: 6,
             spaceBetween: 50,
           },

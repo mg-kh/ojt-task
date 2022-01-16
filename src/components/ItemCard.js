@@ -3,7 +3,7 @@ import React from 'react'
 function ItemCard({ name, promotion = '', price, orPrice = '' }) {
   return (
     <>
-      <div className="relative rounded-t-md pb-2 cursor-pointer group">
+      <div className="relative rounded-md pb-2 cursor-pointer group hover:shadow-md">
         {/* discount */}
         <div
           className={`bg-red-500 text-white absolute top-0 left-0 ${
@@ -34,18 +34,10 @@ function ItemCard({ name, promotion = '', price, orPrice = '' }) {
           />
         </div>
         {/* Price and name */}
-        <div className="mt-2 select-none">
-          <p className="text-md leading-5 group-hover:text-gray-500 duration-200">
-            Lorem ipsum dolor sit amet.
-          </p>
-          <p className="text-md text-red-500 group-hover:text-red-400 duration-200">
-            5400 Ks
-          </p>
-          <p
-            className={`text-xs line-through group-hover:text-gray-500 duration-200 ${
-              orPrice ? '' : 'hidden'
-            }`}
-          >
+        <div className="mt-2 select-none px-1 duration-150">
+          <p className="text-md leading-5">Lorem ipsum dolor sit amet.</p>
+          <p className="text-md text-red-500">5400 Ks</p>
+          <p className={`text-xs line-through ${orPrice ? '' : 'hidden'}`}>
             60000 Ks
           </p>
         </div>

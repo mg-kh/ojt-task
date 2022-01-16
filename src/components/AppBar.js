@@ -2,20 +2,29 @@ import React, { useState } from 'react'
 
 function AppBar() {
   const [sideBarOpen, setSideBarOpen] = useState(false)
+  const [scrollPos, setScrllPos] = useState(0)
+  window.addEventListener('scroll', () => {
+    var top = window.pageYOffset || document.documentElement.scrollTop
+    setScrllPos(top)
+  })
 
   return (
     <nav
-      className={`absolute w-full z-10 sm:rounded-b-none sm:bg-transparent  ${
-        sideBarOpen ? 'bg-gray-200 rounded-b-2xl' : ''
+      className={`w-full fixed top-0 z-10 sm:rounded-b-none bg-white  ${
+        sideBarOpen || scrollPos > 150
+          ? 'bg-gray-200 shadow-xl'
+          : 'bg-opacity-0'
       }`}
     >
-      <div className="container py-1">
+      <div className="container py-2">
         <div className="flex justify-between items-center">
           {/* Left */}
           <div className="relative hidden sm:block">
             <input
               type="text"
-              className="w-48 bg-[#00000078] text-white p-2 rounded-md outline-none"
+              className={`w-48  text-white p-2 rounded-md outline-none  ${
+                scrollPos > 150 ? 'bg-gray-500 focus:ring-2' : 'bg-[#00000078]'
+              }`}
               placeholder="Search Product"
             />
             <img
@@ -27,7 +36,7 @@ function AppBar() {
           {/* Center */}
           <div>
             <img
-              src={require('./../assets/images/logo.png')}
+              src={require('./../assets/images/logo.jpg')}
               alt="logo"
               className="rounded-full w-14"
             />
@@ -37,28 +46,30 @@ function AppBar() {
             <select
               name=""
               className={`text-white ${
-                sideBarOpen
+                sideBarOpen || scrollPos > 150
                   ? 'bg-slate-500 py-1 px-2 rounded-md'
                   : 'bg-transparent'
-              }`}
+              } `}
             >
               <option value="" className="text-black">
-                🇲🇲&emsp;Ks
+                🇲🇲 Ks
               </option>
               <option value="" className="text-black">
-                🇺🇸&emsp;USD
+                🇺🇸 USD
               </option>
             </select>
             {/* Toggle Sidebar */}
             <button
               onClick={() => setSideBarOpen(!sideBarOpen)}
-              className="w-10 h-9 px-2 bg-white rounded-md sm:hidden hover:bg-gray-100 active:bg-gray-300"
+              className={`w-10 h-9 px-2 bg-white rounded-md sm:hidden hover:bg-gray-100 active:bg-gray-300 ${
+                sideBarOpen || scrollPos > 150 ? 'shadow-md' : ''
+              }`}
             >
               {sideBarOpen ? (
                 <img
                   className="w-4 m-auto"
                   src={require('./../assets/images/icons/close.svg').default}
-                  alt="bag-icon"
+                  alt="close"
                 />
               ) : (
                 <img
@@ -105,7 +116,7 @@ function AppBar() {
         className={`bg-gray-100 px-3 py-4 flex flex-col space-y-4 sm:hidden ${
           sideBarOpen ? '' : 'hidden'
         }
-        border rounded-b-2xl`}
+         shadow-lg`}
       >
         <div className="relative inline-block">
           <input

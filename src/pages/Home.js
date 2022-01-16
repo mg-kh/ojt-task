@@ -10,6 +10,7 @@ import {
   Tablets,
   BuyOneGetOne,
   Footer,
+  Brands,
 } from '../components'
 
 function Home() {
@@ -72,7 +73,7 @@ function Home() {
       <section className="container">
         <div className="py-3 space-y-4">
           <h3 className="uppercase font-semibold text-xl">View By Brands</h3>
-          <Categories />
+          <Brands />
         </div>
       </section>
       <hr className="bg-gray-100 my-3 h-2 border-none" />

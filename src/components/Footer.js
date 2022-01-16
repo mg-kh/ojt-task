@@ -42,7 +42,7 @@ function Footer() {
       </div>
       {/* Info Footer Bar */}
       <div className="bg-gray-200 py-3">
-        <p className="text-center text-sm font-semibold">
+        <p className="text-center sm:text-sm font-semibold px-5 text-xs">
           All rights reserved. Made with all the loves in ShopDoora Co.,Ltd.
         </p>
       </div>

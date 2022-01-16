@@ -73,7 +73,7 @@ const useData = (isPromo) => {
 
   const elements = items.map((item) => {
     return (
-      <SwiperSlide key={uniqid()}>
+      <SwiperSlide key={uniqid()} className="p-2 pl-0.5">
         <ItemCard
           name={item.name}
           promotion={item.promotion}
@@ -86,7 +86,7 @@ const useData = (isPromo) => {
 
   const promoElements = promoItems.map((item) => {
     return (
-      <SwiperSlide key={uniqid()}>
+      <SwiperSlide key={uniqid()} className="p-2 pl-0.5">
         <ItemCard
           name={item.name}
           promotion={item.promotion}
@@ -100,26 +100,27 @@ const useData = (isPromo) => {
   const swiperElement = () => {
     return (
       <Swiper
-        slidesPerView={2.5}
-        spaceBetween={25}
+        slidesPerView={1.6}
+        spaceBetween={30}
         centeredSlides={false}
         loop={true}
         breakpoints={{
+          '400': {
+            slidesPerView: 2.4,
+            spaceBetween: 20,
+          },
           '576': {
             slidesPerView: 3,
             spaceBetween: 20,
           },
           '768': {
             slidesPerView: 4,
-            spaceBetween: 40,
           },
           '1024': {
             slidesPerView: 5,
-            spaceBetween: 50,
           },
           '1200': {
             slidesPerView: 6,
-            spaceBetween: 50,
           },
         }}
       >
